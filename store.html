@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarah Chen — Digital Products | BuyMeAd</title>
+    <meta name="description"
+        content="Browse and purchase digital products by Sarah Chen. UI kits, templates, and design resources. Pay or watch ads to access." />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/store.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>" />
+</head>
+
+<body class="store-page">
+    <!-- Store Nav -->
+    <nav class="store-nav">
+        <a href="index.html" class="navbar-brand">
+            <div class="brand-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <rect width="28" height="28" rx="8" fill="url(#storeGrad)" />
+                    <path d="M8 10h12v2H8zM10 14h8l-1 6H11l-1-6z" fill="white" fill-opacity="0.9" />
+                    <circle cx="12" cy="22" r="1.5" fill="white" />
+                    <circle cx="16" cy="22" r="1.5" fill="white" />
+                    <defs>
+                        <linearGradient id="storeGrad" x1="0" y1="0" x2="28" y2="28">
+                            <stop stop-color="#7C3AED" />
+                            <stop offset="1" stop-color="#EC4899" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <span class="brand-text">BuyMe<span class="brand-highlight">Ad</span></span>
+        </a>
+        <div class="store-nav-right">
+            <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+            <a href="signup.html" class="btn btn-primary btn-sm">Start Selling</a>
+        </div>
+    </nav>
+
+    <!-- Cover -->
+    <div class="store-cover">
+        <div class="store-cover-bg"></div>
+        <div class="store-cover-pattern"></div>
+        <div class="store-cover-grid"></div>
+    </div>
+
+    <!-- Profile -->
+    <div class="store-profile-section">
+        <div class="store-profile-card card">
+            <div class="store-avatar">S</div>
+            <h1 class="store-name">Sarah Chen</h1>
+            <p class="store-handle">@sarahchen</p>
+            <p class="store-bio">UI/UX Designer crafting premium templates and design resources. 8+ years in design. Helping creators build beautiful products effortlessly.</p>
+
+            <div class="store-social-links">
+                <a href="#" class="store-social-link" aria-label="Twitter">𝕏</a>
+                <a href="#" class="store-social-link" aria-label="Instagram">📷</a>
+                <a href="#" class="store-social-link" aria-label="Dribbble">🎨</a>
+                <a href="#" class="store-social-link" aria-label="Website">🌐</a>
+            </div>
+
+            <div class="store-stats-row">
+                <div class="store-stat">
+                    <span class="store-stat-value">8</span>
+                    <span class="store-stat-label">Products</span>
+                </div>
+                <div class="store-stat">
+                    <span class="store-stat-value">2.4K</span>
+                    <span class="store-stat-label">Customers</span>
+                </div>
+                <div class="store-stat">
+                    <span class="store-stat-value">4.9 ★</span>
+                    <span class="store-stat-label">Rating</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products -->
+    <div class="store-content">
+        <div class="store-section-header">
+            <h2 class="store-section-title">Digital Products</h2>
+            <div class="store-filter-tabs">
+                <button class="store-filter-tab active" data-filter="all">All</button>
+                <button class="store-filter-tab" data-filter="template">Templates</button>
+                <button class="store-filter-tab" data-filter="ebook">eBooks</button>
+                <button class="store-filter-tab" data-filter="design">Design</button>
+            </div>
+        </div>
+
+        <div class="products-grid" id="storeProducts">
+            <!-- Injected by JS -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align:center;padding:var(--space-12) var(--space-6) var(--space-8);border-top:1px solid rgba(255,255,255,0.05);margin-top:var(--space-12);">
+        <a href="index.html" class="navbar-brand" style="justify-content:center;margin-bottom:var(--space-3);">
+            <div class="brand-icon">
+                <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                    <rect width="28" height="28" rx="8" fill="url(#footGrad)" />
+                    <path d="M8 10h12v2H8zM10 14h8l-1 6H11l-1-6z" fill="white" fill-opacity="0.9" />
+                    <defs>
+                        <linearGradient id="footGrad" x1="0" y1="0" x2="28" y2="28">
+                            <stop stop-color="#7C3AED" />
+                            <stop offset="1" stop-color="#EC4899" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <span class="brand-text" style="font-size:var(--text-base);">BuyMe<span class="brand-highlight">Ad</span></span>
+        </a>
+        <p style="color:var(--dark-500);font-size:var(--text-xs);">Powered by BuyMeAd · Sell digital products, earn from ads</p>
+    </footer>
+
+    <script src="js/store.js"></script>
+</body>
+
+</html>
