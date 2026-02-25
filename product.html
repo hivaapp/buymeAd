@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Kit Pro Bundle — BuyMeAd</title>
+    <meta name="description" content="Access UI Kit Pro Bundle by Sarah Chen. Pay $29 or watch ads to access for free." />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/store.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>" />
+</head>
+
+<body class="store-page">
+    <!-- Nav -->
+    <nav class="store-nav">
+        <a href="index.html" class="navbar-brand">
+            <div class="brand-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <rect width="28" height="28" rx="8" fill="url(#pvGrad)" />
+                    <path d="M8 10h12v2H8zM10 14h8l-1 6H11l-1-6z" fill="white" fill-opacity="0.9" />
+                    <circle cx="12" cy="22" r="1.5" fill="white" />
+                    <circle cx="16" cy="22" r="1.5" fill="white" />
+                    <defs>
+                        <linearGradient id="pvGrad" x1="0" y1="0" x2="28" y2="28">
+                            <stop stop-color="#7C3AED" />
+                            <stop offset="1" stop-color="#EC4899" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <span class="brand-text">BuyMe<span class="brand-highlight">Ad</span></span>
+        </a>
+        <div class="store-nav-right">
+            <a href="store.html" class="btn btn-ghost btn-sm">← Back to Store</a>
+        </div>
+    </nav>
+
+    <!-- Product View -->
+    <div class="product-view" id="productView">
+        <div class="product-view-header">
+            <div class="product-view-icon" style="background: rgba(124,58,237,0.12);">📄</div>
+            <h1 class="product-view-title">UI Kit Pro Bundle</h1>
+            <div class="product-view-creator">
+                <div class="avatar avatar-sm" style="background: linear-gradient(135deg, #f472b6, #a78bfa);">S</div>
+                <span class="product-view-creator-name">by <strong>Sarah Chen</strong></span>
+                <span class="badge badge-success">Verified Creator</span>
+            </div>
+            <p class="product-view-desc">
+                A comprehensive UI kit with 200+ components, 50+ screens, and a complete design system.
+                Built for Figma &amp; Sketch. Perfect for startups, SaaS products, and mobile apps.
+                Includes dark mode variants and responsive layouts.
+            </p>
+        </div>
+
+        <!-- Product Details Card -->
+        <div class="card" style="padding:var(--space-6);margin-bottom:var(--space-6);">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);text-align:center;">
+                <div>
+                    <div style="font-size:20px;margin-bottom:4px;">📦</div>
+                    <div style="font-size:var(--text-xs);color:var(--dark-400);">Format</div>
+                    <div style="font-size:var(--text-sm);font-weight:600;color:#fff;">Figma, Sketch</div>
+                </div>
+                <div>
+                    <div style="font-size:20px;margin-bottom:4px;">📐</div>
+                    <div style="font-size:var(--text-xs);color:var(--dark-400);">Components</div>
+                    <div style="font-size:var(--text-sm);font-weight:600;color:#fff;">200+</div>
+                </div>
+                <div>
+                    <div style="font-size:20px;margin-bottom:4px;">📱</div>
+                    <div style="font-size:var(--text-xs);color:var(--dark-400);">Screens</div>
+                    <div style="font-size:var(--text-sm);font-weight:600;color:#fff;">50+</div>
+                </div>
+                <div>
+                    <div style="font-size:20px;margin-bottom:4px;">⭐</div>
+                    <div style="font-size:var(--text-xs);color:var(--dark-400);">Rating</div>
+                    <div style="font-size:var(--text-sm);font-weight:600;color:#fff;">4.9/5</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Access Options -->
+        <h2 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:#fff;text-align:center;margin-bottom:var(--space-6);">Choose How to Access</h2>
+
+        <div class="access-options" id="accessOptions">
+            <!-- Option 1: Pay -->
+            <div class="access-option card" id="optionPay">
+                <div class="access-option-icon" style="background: rgba(16,185,129,0.12);">💳</div>
+                <h3 class="access-option-title">Pay $29</h3>
+                <p class="access-option-desc">Instant access. Download the full bundle immediately after payment.</p>
+                <button class="btn btn-success btn-lg" onclick="handlePay()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" />
+                        <path d="M1 10h22" />
+                    </svg>
+                    Buy Now &mdash; $29
+                </button>
+                <p style="font-size:var(--text-xs);color:var(--dark-500);margin-top:var(--space-3);">Secure payment via Stripe</p>
+            </div>
+
+            <!-- Option 2: Watch Ads -->
+            <div class="access-option card" id="optionAds">
+                <div class="access-option-icon" style="background: rgba(251,191,36,0.12);">📺</div>
+                <h3 class="access-option-title">Watch Ads</h3>
+                <p class="access-option-desc">Watch 3 short video ads (30s each) to unlock free access to this product.</p>
+                <button class="btn btn-outline btn-lg" onclick="startAdFlow()" style="border-color:var(--warning-500);color:var(--warning-400);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <polygon points="5,3 19,12 5,21" fill="currentColor" />
+                    </svg>
+                    Watch 3 Ads to Unlock
+                </button>
+                <p style="font-size:var(--text-xs);color:var(--dark-500);margin-top:var(--space-3);">Free access &middot; Ads support the creator</p>
+            </div>
+        </div>
+
+        <!-- OR: Survey -->
+        <div style="text-align:center;margin: calc(-1 * var(--space-3)) 0 var(--space-5);">
+            <span style="font-size:var(--text-xs);color:var(--dark-500);">or</span>
+        </div>
+
+        <div class="card" style="padding:var(--space-6);text-align:center;border-color:rgba(124,58,237,0.15);">
+            <div style="display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap;">
+                <div style="display:flex;align-items:center;gap:var(--space-3);">
+                    <div style="width:42px;height:42px;border-radius:var(--radius-xl);background:rgba(124,58,237,0.12);display:flex;align-items:center;justify-content:center;font-size:18px;">📋</div>
+                    <div style="text-align:left;">
+                        <div style="font-size:var(--text-sm);font-weight:700;color:#fff;">Complete a Survey</div>
+                        <div style="font-size:var(--text-xs);color:var(--dark-400);">Answer 5 quick questions &amp; get free access</div>
+                    </div>
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="startSurveyFlow()">Start Survey</button>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div style="margin-top:var(--space-10);">
+            <h2 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:#fff;margin-bottom:var(--space-6);">Reviews</h2>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4);" id="reviewsList">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== AD OVERLAY ========== -->
+    <div class="ad-overlay" id="adOverlay">
+        <div class="ad-container" id="adContainer">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-4);">
+                <div style="font-size:var(--text-sm);font-weight:600;color:#fff;">Ad <span id="adCurrentNum">1</span> of 3</div>
+                <button class="btn btn-ghost btn-sm" onclick="closeAdOverlay()" style="color:var(--dark-500);">&#x2715; Close</button>
+            </div>
+
+            <div class="ad-progress" id="adProgress">
+                <div class="ad-progress-step"><div class="ad-progress-fill" id="adProg1"></div></div>
+                <div class="ad-progress-step"><div class="ad-progress-fill" id="adProg2"></div></div>
+                <div class="ad-progress-step"><div class="ad-progress-fill" id="adProg3"></div></div>
+            </div>
+
+            <div class="ad-video-placeholder" id="adVideoArea">
+                <div class="ad-play-icon" id="adPlayBtn" onclick="playAd()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <polygon points="8,5 19,12 8,19" fill="white" />
+                    </svg>
+                </div>
+                <div class="ad-timer" id="adTimer" style="display:none;">30</div>
+                <div class="ad-label" id="adLabel">Click play to start watching the ad</div>
+            </div>
+
+            <div style="text-align:center;">
+                <button class="btn btn-primary ad-skip-btn" id="adSkipBtn" onclick="nextAd()">Continue to Next Ad &rarr;</button>
+                <button class="btn btn-success ad-skip-btn" id="adFinishBtn" onclick="finishAdFlow()" style="display:none;">🎉 Claim Your Access</button>
+                <p style="font-size:var(--text-xs);color:var(--dark-500);margin-top:var(--space-3);">Your ad view supports the creator. Thank you!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SURVEY OVERLAY ========== -->
+    <div class="ad-overlay" id="surveyOverlay">
+        <div class="ad-container survey-container" id="surveyContainer">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-4);">
+                <div style="font-size:var(--text-sm);font-weight:600;color:#fff;">Question <span id="surveyCurrentNum">1</span> of 5</div>
+                <button class="btn btn-ghost btn-sm" onclick="closeSurveyOverlay()" style="color:var(--dark-500);">&#x2715; Close</button>
+            </div>
+
+            <div class="ad-progress" id="surveyProgress">
+                <div class="ad-progress-step"><div class="ad-progress-fill" id="sProg1"></div></div>
+                <div class="ad-progress-step"><div class="ad-progress-fill" id="sProg2"></div></div>
+                <div class="ad-progress-step"><div class="ad-progress-fill" id="sProg3"></div></div>
+                <div class="ad-progress-step"><div class="ad-progress-fill" id="sProg4"></div></div>
+                <div class="ad-progress-step"><div class="ad-progress-fill" id="sProg5"></div></div>
+            </div>
+
+            <div id="surveyQuestionArea"><!-- Injected by JS --></div>
+
+            <div style="display:flex;gap:var(--space-3);margin-top:var(--space-6);justify-content:flex-end;">
+                <button class="btn btn-primary" id="surveyNextBtn" onclick="nextSurveyQuestion()" disabled>Next Question &rarr;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PAYMENT MODAL ========== -->
+    <div class="modal-backdrop" id="paymentModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">💳 Complete Purchase</h2>
+                <button class="modal-close" onclick="closePaymentModal()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div style="display:flex;align-items:center;gap:var(--space-4);padding:var(--space-4);background:rgba(255,255,255,0.03);border-radius:var(--radius-xl);margin-bottom:var(--space-6);">
+                <div style="width:48px;height:48px;border-radius:var(--radius-lg);background:rgba(124,58,237,0.12);display:flex;align-items:center;justify-content:center;font-size:22px;">📄</div>
+                <div style="flex:1;">
+                    <div style="font-weight:600;color:#fff;font-size:var(--text-sm);">UI Kit Pro Bundle</div>
+                    <div style="font-size:var(--text-xs);color:var(--dark-400);">by Sarah Chen</div>
+                </div>
+                <div style="font-family:var(--font-display);font-weight:800;font-size:var(--text-xl);color:var(--success-400);">$29</div>
+            </div>
+            <form onsubmit="processPayment(event)">
+                <div style="display:flex;flex-direction:column;gap:var(--space-4);">
+                    <div class="input-group">
+                        <label class="input-label">Email Address</label>
+                        <input type="email" class="input" placeholder="you@email.com" required />
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Card Number</label>
+                        <input type="text" class="input" placeholder="4242 4242 4242 4242" maxlength="19" required />
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+                        <div class="input-group">
+                            <label class="input-label">Expiry</label>
+                            <input type="text" class="input" placeholder="MM/YY" maxlength="5" required />
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label">CVC</label>
+                            <input type="text" class="input" placeholder="123" maxlength="3" required />
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg" style="width:100%;margin-top:var(--space-6);" id="payBtn">Pay $29</button>
+                <p style="font-size:var(--text-xs);color:var(--dark-500);text-align:center;margin-top:var(--space-3);">&#x1F512; Secured by Stripe. Your data is encrypted.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========== SUCCESS OVERLAY ========== -->
+    <div class="ad-overlay" id="successOverlay">
+        <div class="ad-container">
+            <div class="access-success">
+                <div class="access-success-icon">✅</div>
+                <h2>Access Unlocked!</h2>
+                <p id="successMessage">Your product is ready to download.</p>
+                <button class="btn btn-success btn-lg" onclick="downloadProduct()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                        <polyline points="7,10 12,15 17,10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Download Now
+                </button>
+                <a href="store.html" class="btn btn-ghost" style="margin-top:var(--space-3);">← Back to Store</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="js/product.js"></script>
+</body>
+
+</html>
