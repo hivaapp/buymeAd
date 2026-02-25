@@ -1,0 +1,147 @@
+/* ============================================
+   BuyMeAd Design System — CSS Variables
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ── Primary Palette ── */
+  --primary-50: #f5f3ff;
+  --primary-100: #ede9fe;
+  --primary-200: #ddd6fe;
+  --primary-300: #c4b5fd;
+  --primary-400: #a78bfa;
+  --primary-500: #8b5cf6;
+  --primary-600: #7c3aed;
+  --primary-700: #6d28d9;
+  --primary-800: #5b21b6;
+  --primary-900: #4c1d95;
+
+  /* ── Accent (Pink) ── */
+  --accent-50: #fdf2f8;
+  --accent-100: #fce7f3;
+  --accent-200: #fbcfe8;
+  --accent-300: #f9a8d4;
+  --accent-400: #f472b6;
+  --accent-500: #ec4899;
+  --accent-600: #db2777;
+  --accent-700: #be185d;
+  --accent-800: #9d174d;
+  --accent-900: #831843;
+
+  /* ── Success (Green) ── */
+  --success-50: #ecfdf5;
+  --success-100: #d1fae5;
+  --success-200: #a7f3d0;
+  --success-300: #6ee7b7;
+  --success-400: #34d399;
+  --success-500: #10b981;
+  --success-600: #059669;
+  --success-700: #047857;
+
+  /* ── Warning (Amber) ── */
+  --warning-50: #fffbeb;
+  --warning-100: #fef3c7;
+  --warning-400: #fbbf24;
+  --warning-500: #f59e0b;
+  --warning-600: #d97706;
+
+  /* ── Danger (Red) ── */
+  --danger-50: #fef2f2;
+  --danger-100: #fee2e2;
+  --danger-400: #f87171;
+  --danger-500: #ef4444;
+  --danger-600: #dc2626;
+
+  /* ── Neutrals (Dark Mode First) ── */
+  --dark-950: #09070f;
+  --dark-900: #0f0b1e;
+  --dark-850: #13102a;
+  --dark-800: #1a1533;
+  --dark-750: #201a3d;
+  --dark-700: #2a2349;
+  --dark-600: #3d3462;
+  --dark-500: #564c7e;
+  --dark-400: #7a6faa;
+  --dark-300: #9e94c8;
+  --dark-200: #c2bade;
+  --dark-100: #e0dcef;
+  --dark-50: #f0eef7;
+
+  /* ── Gradients ── */
+  --gradient-primary: linear-gradient(135deg, var(--primary-600) 0%, var(--accent-500) 100%);
+  --gradient-primary-hover: linear-gradient(135deg, var(--primary-700) 0%, var(--accent-600) 100%);
+  --gradient-hero: linear-gradient(160deg, #0f0b1e 0%, #1a1040 40%, #2d1466 70%, #1a1040 100%);
+  --gradient-card: linear-gradient(145deg, rgba(26, 21, 51, 0.8) 0%, rgba(15, 11, 30, 0.9) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+  --gradient-success: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  --gradient-warning: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+
+  /* ── Typography ── */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  /* ── Spacing ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ── Border Radius ── */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.35), 0 4px 6px -4px rgba(0,0,0,0.2);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.4), 0 8px 10px -6px rgba(0,0,0,0.2);
+  --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.25);
+  --shadow-glow-accent: 0 0 40px rgba(236, 72, 153, 0.2);
+  --shadow-glow-success: 0 0 30px rgba(16, 185, 129, 0.2);
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Z-Index ── */
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-modal-backdrop: 1200;
+  --z-modal: 1300;
+  --z-toast: 1400;
+
+  /* ── Container ── */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1400px;
+}
