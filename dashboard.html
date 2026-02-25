@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — BuyMeAd</title>
+    <meta name="description" content="Manage your digital products, track sales, ad revenue, and payouts." />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>" />
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <!-- ========== SIDEBAR ========== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="navbar-brand">
+                    <div class="brand-icon">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <rect width="28" height="28" rx="8" fill="url(#sideGrad)" />
+                            <path d="M8 10h12v2H8zM10 14h8l-1 6H11l-1-6z" fill="white" fill-opacity="0.9" />
+                            <circle cx="12" cy="22" r="1.5" fill="white" />
+                            <circle cx="16" cy="22" r="1.5" fill="white" />
+                            <defs>
+                                <linearGradient id="sideGrad" x1="0" y1="0" x2="28" y2="28">
+                                    <stop stop-color="#7C3AED" />
+                                    <stop offset="1" stop-color="#EC4899" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="brand-text">BuyMe<span class="brand-highlight">Ad</span></span>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Main</div>
+                    <a href="dashboard.html" class="sidebar-link active">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="7" height="7" rx="1" />
+                            <rect x="14" y="3" width="7" height="7" rx="1" />
+                            <rect x="3" y="14" width="7" height="7" rx="1" />
+                            <rect x="14" y="14" width="7" height="7" rx="1" />
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a href="#" class="sidebar-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M18 20V10M12 20V4M6 20v-6" />
+                        </svg>
+                        Analytics
+                    </a>
+                    <a href="#" class="sidebar-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+                        </svg>
+                        Earnings
+                        <span class="sidebar-badge">$5.6K</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Products</div>
+                    <a href="#" class="sidebar-link" id="sidebarMyProducts">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 12V8H6a2 2 0 01-2-2c0-1.1.9-2 2-2h12v4" />
+                            <path d="M4 6v12c0 1.1.9 2 2 2h14v-4" />
+                            <circle cx="18" cy="16" r="2" />
+                        </svg>
+                        My Products
+                        <span class="sidebar-badge">8</span>
+                    </a>
+                    <a href="#" class="sidebar-link" id="sidebarAddProduct" onclick="openAddProductModal()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 8v8M8 12h8" />
+                        </svg>
+                        Add Product
+                    </a>
+                    <a href="#" class="sidebar-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                            <polyline points="14,2 14,8 20,8" />
+                        </svg>
+                        File Hosting
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Revenue</div>
+                    <a href="#" class="sidebar-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <polygon points="10,7 16,10 10,13" fill="currentColor" opacity="0.5" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                        Ad Revenue
+                    </a>
+                    <a href="#" class="sidebar-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                        Surveys
+                    </a>
+                    <a href="#" class="sidebar-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 12V7H5a2 2 0 010-4h14v4" />
+                            <path d="M3 5v14a2 2 0 002 2h16v-5" />
+                            <path d="M18 12a2 2 0 000 4h4v-4h-4z" />
+                        </svg>
+                        Payouts
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Store</div>
+                    <a href="store.html" class="sidebar-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                            <polyline points="9,22 9,12 15,12 15,22" />
+                        </svg>
+                        My Storefront
+                    </a>
+                    <a href="#" class="sidebar-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3" />
+                            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+                        </svg>
+                        Settings
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <div class="avatar" style="background: linear-gradient(135deg, #f472b6, #a78bfa);">S</div>
+                    <div class="sidebar-user-info">
+                        <span class="sidebar-user-name">Sarah Chen</span>
+                        <span class="sidebar-user-email">sarah@design.io</span>
+                    </div>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--dark-500)" stroke-width="1.5">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ========== MAIN ========== -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="main-header-left">
+                    <button class="sidebar-toggle btn btn-icon" id="sidebarToggle" aria-label="Toggle sidebar">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12h18M3 6h18M3 18h18" />
+                        </svg>
+                    </button>
+                    <h1 class="main-header-title">Dashboard</h1>
+                </div>
+                <div class="main-header-right">
+                    <div class="header-search">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
+                        </svg>
+                        <input type="text" placeholder="Search..." id="dashSearch" />
+                    </div>
+                    <button class="notification-btn" id="notifBtn" aria-label="Notifications">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" />
+                        </svg>
+                        <span class="notification-dot"></span>
+                    </button>
+                    <div class="avatar" style="background: linear-gradient(135deg, #f472b6, #a78bfa); cursor:pointer;">S</div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Welcome Banner -->
+                <div class="card" style="margin-bottom: var(--space-8); padding: var(--space-6) var(--space-8); background: linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(236,72,153,0.08) 100%); border-color: rgba(124,58,237,0.15);">
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--space-4);">
+                        <div>
+                            <h2 style="font-family:var(--font-display); font-size:var(--text-2xl); font-weight:800; color:#fff; margin-bottom:var(--space-2);">Welcome back, Sarah! 👋</h2>
+                            <p style="color:var(--dark-300); font-size:var(--text-sm);">You've earned <strong style="color:var(--success-400);">$1,240</strong> this week across sales and ad revenue. Keep it up!</p>
+                        </div>
+                        <div style="display:flex; gap:var(--space-3);">
+                            <a href="store.html" class="btn btn-secondary">View Store</a>
+                            <button class="btn btn-primary" onclick="openAddProductModal()">+ Add Product</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card card" id="statTotalRevenue">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon" style="background:rgba(16,185,129,0.1);">💰</div>
+                            <div class="stat-card-trend up">&uarr; 24%</div>
+                        </div>
+                        <div class="stat-card-value" data-count="5620">$0</div>
+                        <div class="stat-card-label">Total Revenue</div>
+                    </div>
+
+                    <div class="stat-card card" id="statSalesRevenue">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon" style="background:rgba(124,58,237,0.1);">🛒</div>
+                            <div class="stat-card-trend up">&uarr; 18%</div>
+                        </div>
+                        <div class="stat-card-value" data-count="4280">$0</div>
+                        <div class="stat-card-label">Sales Revenue</div>
+                    </div>
+
+                    <div class="stat-card card" id="statAdRevenue">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon" style="background:rgba(251,191,36,0.1);">📺</div>
+                            <div class="stat-card-trend up">&uarr; 42%</div>
+                        </div>
+                        <div class="stat-card-value" data-count="1340">$0</div>
+                        <div class="stat-card-label">Ad &amp; Survey Revenue</div>
+                    </div>
+
+                    <div class="stat-card card" id="statProducts">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon" style="background:rgba(236,72,153,0.1);">📦</div>
+                            <div class="stat-card-trend up">&uarr; 2</div>
+                        </div>
+                        <div class="stat-card-value" data-count="8" data-no-prefix="true">0</div>
+                        <div class="stat-card-label">Active Products</div>
+                    </div>
+                </div>
+
+                <!-- Chart + Breakdown -->
+                <div class="dashboard-grid">
+                    <div class="chart-card card" id="revenueChart">
+                        <div class="chart-card-header">
+                            <h2 class="chart-card-title">Revenue Overview</h2>
+                            <div class="chart-filter">
+                                <button class="chart-filter-btn active" data-range="7d">7D</button>
+                                <button class="chart-filter-btn" data-range="30d">30D</button>
+                                <button class="chart-filter-btn" data-range="90d">90D</button>
+                                <button class="chart-filter-btn" data-range="all">All</button>
+                            </div>
+                        </div>
+                        <div class="chart-placeholder" id="chartBars">
+                            <!-- Bars injected by JS -->
+                        </div>
+                        <div class="chart-legend">
+                            <div class="chart-legend-item">
+                                <div class="chart-legend-dot" style="background:var(--primary-500);"></div>
+                                Sales Revenue
+                            </div>
+                            <div class="chart-legend-item">
+                                <div class="chart-legend-dot" style="background:var(--warning-400);"></div>
+                                Ad Revenue
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card card">
+                        <div class="chart-card-header">
+                            <h2 class="chart-card-title">Revenue Split</h2>
+                        </div>
+                        <div class="breakdown-list">
+                            <div class="breakdown-item">
+                                <div style="width:42px;height:42px;border-radius:var(--radius-xl);background:rgba(124,58,237,0.1);display:flex;align-items:center;justify-content:center;">🛒</div>
+                                <div class="breakdown-info">
+                                    <div class="breakdown-label">
+                                        <span class="breakdown-name">Direct Sales</span>
+                                        <span class="breakdown-amount">$4,280</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width:76%;background:var(--primary-500);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div style="width:42px;height:42px;border-radius:var(--radius-xl);background:rgba(251,191,36,0.1);display:flex;align-items:center;justify-content:center;">📺</div>
+                                <div class="breakdown-info">
+                                    <div class="breakdown-label">
+                                        <span class="breakdown-name">Ad Views</span>
+                                        <span class="breakdown-amount">$890</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width:52%;background:var(--warning-400);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div style="width:42px;height:42px;border-radius:var(--radius-xl);background:rgba(236,72,153,0.1);display:flex;align-items:center;justify-content:center;">📋</div>
+                                <div class="breakdown-info">
+                                    <div class="breakdown-label">
+                                        <span class="breakdown-name">Survey Completions</span>
+                                        <span class="breakdown-amount">$450</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width:30%;background:var(--accent-500);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="divider" style="margin:var(--space-3) 0;">
+                            <div class="breakdown-item">
+                                <div style="width:42px;height:42px;border-radius:var(--radius-xl);background:rgba(239,68,68,0.1);display:flex;align-items:center;justify-content:center;">💸</div>
+                                <div class="breakdown-info">
+                                    <div class="breakdown-label">
+                                        <span class="breakdown-name">Platform Fee (5%)</span>
+                                        <span class="breakdown-amount" style="color:var(--danger-400);">-$214</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width:5%;background:var(--danger-500);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-3) var(--space-4);background:rgba(16,185,129,0.06);border-radius:var(--radius-lg);border:1px solid rgba(16,185,129,0.1);">
+                                <span style="font-size:var(--text-sm);font-weight:600;color:var(--dark-200);">Net Payout</span>
+                                <span style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:800;color:var(--success-400);">$5,406</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Transactions -->
+                <div class="dashboard-grid">
+                    <div class="transactions-card card">
+                        <div class="chart-card-header">
+                            <h2 class="chart-card-title">Recent Transactions</h2>
+                            <a href="#" class="btn btn-ghost btn-sm">View All</a>
+                        </div>
+                        <div class="transaction-list" id="transactionList">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="card" style="padding:var(--space-6);">
+                        <h2 class="chart-card-title" style="margin-bottom:var(--space-5);">Quick Actions</h2>
+                        <div style="display:flex;flex-direction:column;gap:var(--space-3);">
+                            <button class="btn btn-primary" style="width:100%;justify-content:flex-start;" onclick="openAddProductModal()">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 8v8M8 12h8" />
+                                </svg>
+                                Add New Product
+                            </button>
+                            <a href="store.html" class="btn btn-secondary" style="width:100%;justify-content:flex-start;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                Preview Storefront
+                            </a>
+                            <button class="btn btn-secondary" style="width:100%;justify-content:flex-start;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8" />
+                                    <polyline points="16,6 12,2 8,6" />
+                                    <line x1="12" y1="2" x2="12" y2="15" />
+                                </svg>
+                                Share Your Page
+                            </button>
+                            <button class="btn btn-secondary" style="width:100%;justify-content:flex-start;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 12V7H5a2 2 0 010-4h14v4" />
+                                    <path d="M3 5v14a2 2 0 002 2h16v-5" />
+                                    <path d="M18 12a2 2 0 000 4h4v-4h-4z" />
+                                </svg>
+                                Request Payout
+                            </button>
+                        </div>
+
+                        <hr class="divider">
+
+                        <h3 style="font-size:var(--text-sm);font-weight:700;color:#fff;margin-bottom:var(--space-3);">Payout Status</h3>
+                        <div style="display:flex;flex-direction:column;gap:var(--space-3);">
+                            <div style="display:flex;align-items:center;justify-content:space-between;">
+                                <span style="font-size:var(--text-sm);color:var(--dark-300);">Available Balance</span>
+                                <span style="font-family:var(--font-display);font-weight:700;color:var(--success-400);">$2,180</span>
+                            </div>
+                            <div style="display:flex;align-items:center;justify-content:space-between;">
+                                <span style="font-size:var(--text-sm);color:var(--dark-300);">Pending (Ad Revenue)</span>
+                                <span style="font-family:var(--font-display);font-weight:700;color:var(--warning-400);">$340</span>
+                            </div>
+                            <div style="display:flex;align-items:center;justify-content:space-between;">
+                                <span style="font-size:var(--text-sm);color:var(--dark-300);">Next Payout</span>
+                                <span class="badge badge-primary">Mar 1, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Table -->
+                <div class="products-section">
+                    <div class="products-header">
+                        <h2>Your Products</h2>
+                        <button class="btn btn-primary btn-sm" onclick="openAddProductModal()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14" />
+                            </svg>
+                            Add Product
+                        </button>
+                    </div>
+                    <div class="card" style="padding:0; overflow:hidden;">
+                        <div class="products-table-wrap">
+                            <table class="products-table" id="productsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Access Methods</th>
+                                        <th>Sales</th>
+                                        <th>Ad Views</th>
+                                        <th>Revenue</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTableBody">
+                                    <!-- Injected by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ========== ADD PRODUCT MODAL ========== -->
+    <div class="modal-backdrop" id="addProductModal">
+        <div class="modal" style="max-width:620px;">
+            <div class="modal-header">
+                <h2 class="modal-title">Add New Product</h2>
+                <button class="modal-close" onclick="closeAddProductModal()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <form id="addProductForm" onsubmit="handleAddProduct(event)">
+                <div style="display:flex;flex-direction:column;gap:var(--space-5);">
+                    <div class="input-group">
+                        <label class="input-label" for="productName">Product Name *</label>
+                        <input type="text" class="input" id="productName" placeholder="e.g. Ultimate UI Kit" required />
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="productDesc">Description</label>
+                        <textarea class="input textarea" id="productDesc" placeholder="Describe your product..." rows="3"></textarea>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+                        <div class="input-group">
+                            <label class="input-label" for="productPrice">Price ($) *</label>
+                            <input type="number" class="input" id="productPrice" placeholder="29" min="0" step="0.01" required />
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="productCategory">Category</label>
+                            <select class="input" id="productCategory">
+                                <option value="template">Template</option>
+                                <option value="ebook">eBook / PDF</option>
+                                <option value="course">Course</option>
+                                <option value="code">Code / Plugin</option>
+                                <option value="design">Design Asset</option>
+                                <option value="preset">Preset / Filter</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Access Methods</label>
+                        <div style="display:flex;flex-direction:column;gap:var(--space-3);margin-top:var(--space-2);">
+                            <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer;font-size:var(--text-sm);color:var(--dark-200);">
+                                <input type="checkbox" id="accessPay" checked style="accent-color:var(--primary-500);width:18px;height:18px;" />
+                                💳 Pay to Access (customers pay your listed price)
+                            </label>
+                            <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer;font-size:var(--text-sm);color:var(--dark-200);">
+                                <input type="checkbox" id="accessAds" checked style="accent-color:var(--warning-500);width:18px;height:18px;" />
+                                📺 Watch Ads (users watch 2-3 video ads to unlock)
+                            </label>
+                            <label style="display:flex;align-items:center;gap:var(--space-3);cursor:pointer;font-size:var(--text-sm);color:var(--dark-200);">
+                                <input type="checkbox" id="accessSurvey" style="accent-color:var(--accent-500);width:18px;height:18px;" />
+                                📋 Complete Survey (users complete a short survey)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="productFile">Upload File</label>
+                        <div style="border:2px dashed rgba(255,255,255,0.08);border-radius:var(--radius-xl);padding:var(--space-8);text-align:center;cursor:pointer;transition:all var(--transition-fast);" id="fileDropZone">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--dark-500)" stroke-width="1.5" style="margin:0 auto var(--space-3);">
+                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                <polyline points="17,8 12,3 7,8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                            <p style="color:var(--dark-300);font-size:var(--text-sm);margin-bottom:var(--space-1);">Drag &amp; drop your file here, or <span style="color:var(--primary-400);font-weight:600;">browse</span></p>
+                            <p style="color:var(--dark-500);font-size:var(--text-xs);">PDF, ZIP, PSD, AI, FIGMA, MP4 &mdash; Max 500MB</p>
+                            <input type="file" id="productFile" style="display:none;" />
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:var(--space-3);margin-top:var(--space-8);justify-content:flex-end;">
+                    <button type="button" class="btn btn-secondary" onclick="closeAddProductModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                        Add Product
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
